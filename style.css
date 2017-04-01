@@ -27,3 +27,9 @@ main {
 	align-items: center;
 }
 
+#start {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
