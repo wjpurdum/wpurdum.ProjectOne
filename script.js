@@ -10,6 +10,55 @@ var questionOne {
 		c: شنسيتبشسيب
 		d: يشبيسب
 	}
-	value: 10
+	value: 20
 	correct: false
-}dfsasdfdsس
+}
+
+var questionTwo {
+	question: "What is the feminine plural form of 'translators' (مترجم)?";
+	answers {
+		a: شنسيتبشسيب
+		b: متشيسبيش
+		c: شنسيتبشسيب
+		d: يشبيسب
+	}
+	value: 20
+	correct: false
+}
+
+
+var questionThree {
+	question: "What is the feminine plural form of 'translators' (مترجم)?";
+	answers {
+		a: شنسيتبشسيب
+		b: متشيسبيش
+		c: شنسيتبشسيب
+		d: يشبيسب
+	}
+	value: 20
+	correct: false
+}
+
+var questionFour {
+	question: "What is the feminine plural form of 'translators' (مترجم)?";
+	answers {
+		a: شنسيتبشسيب
+		b: متشيسبيش
+		c: شنسيتبشسيب
+		d: يشبيسب
+	}
+	value: 20
+	correct: false
+}
+
+var questionFive {
+	question: "What is the feminine plural form of 'translators' (مترجم)?";
+	answers {
+		a: شنسيتبشسيب
+		b: متشيسبيش
+		c: شنسيتبشسيب
+		d: يشبيسب
+	}
+	value: 20
+	correct: false
+}
