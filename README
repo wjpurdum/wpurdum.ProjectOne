@@ -1,0 +1,13 @@
+Step 1 - You cannot have the multilingual characters in unicode document.. convert the document to UTF-8 document
+advanced editors don't make it simple for you... go low level... 
+use notepad to save the document as meName.html & change the encoding
+type to UTF-8
+Step 2 - Mention in your html page that you are going to use such characters by
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+Step 3 - When you put in some characters make sure your container tags have the following 2 properties set
+dir='rtl'
+lang='ar'
+Step 4 - Get the characters from some specific tool\editor or online editor like i did with Arabic-Keyboard.org
+example
+
+<p dir="rtl" lang="ar" style="color:#e0e0e0;font-size:20px;">رَبٍّ زِدْنٍي عِلمًا</p>

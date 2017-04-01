@@ -1,0 +1,29 @@
+.container {
+	border: 1px black solid;
+	margin: 15px;
+}
+
+.border {
+	border: 1px black solid;
+}
+
+header {
+	display: flex;
+	border: 1px black solid;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.player-info {
+	padding: 10px 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
