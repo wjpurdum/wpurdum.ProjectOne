@@ -14,7 +14,11 @@ header {
 	display: flex;
 	border: 1px black solid;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+}
+
+#time-text {
+	margin-left: 100px;
 }
 
 .player-info {

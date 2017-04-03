@@ -33,11 +33,7 @@ var questionTwo = {
 
 }
 
-
-
-
 $("#start").click(startGame);
-
 
 
 function startGame() {
@@ -45,7 +41,13 @@ function startGame() {
 	var userName = $("#enterName").val();
 	$("#name").text(userName);
 	$("#startScreen").addClass('hide');
-	showQuestionOne();
+	if($("#enterName").val() != "") {
+		showQuestionOne();
+	} else  {
+		$("#hint").removeClass('initialHide');
+		$("#hint").text("Please enter your username!")
+	}
+	
 };
 
 function clearText() {
