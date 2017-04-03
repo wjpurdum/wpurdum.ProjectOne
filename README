@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 Step 1 - You cannot have the multilingual characters in unicode document.. convert the document to UTF-8 document
 advanced editors don't make it simple for you... go low level... 
 use notepad to save the document as meName.html & change the encoding

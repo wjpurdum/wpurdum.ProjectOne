@@ -2,34 +2,65 @@
   <head>
     <title>Quiz</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="script.js"></script>
   </head>
   <body class="container">
     <header>
-      <div class = "border player-info" id="score">Placeholder: Score</div>
+      <div class = "border player-info" id="score"></div>
       <div class = "border player-info" id="name"> Placeholder: Name</div>
     </header>
     <main>
         
-        <section class = "border" id="start">
-          <p>Take the plural challenge. Please tell us your name so we can save your score. 
+        <section class = "border" id="startScreen">
+          <p>Take the plural challenge.<br> Please tell us your name so we can save your score. 
             <form>
-              Your name (إسمك): <input type="text" name="firstName">
+              Your name <br> إسمك <br><br> <input id="enterName" type="text" name="firstName">
             </form>
-        <p>Are you ready to start?</p>
           <button id="start">Let's get started! <br>
            يا الله!
           </button>
         </section>
-        <div class="border" id="question">Placeholder text Questions</div>
-          <p> ;</p>
-        <div class="border" id="answers">PLaceholder text Answers</div>
-        <div class="border" id="hint">PLaceholder text hint</div>
-        <div class="border" id="timer">Placeholder Timer</div>
-          <p>Time remaining</p>
-        <button iclass="border" id="next">Next Placeholder</button>
+        <div class="border initialHide" id="question">
+             <h1 id="question-text"></h1>
+        </div>
+         
+        <div class="initialHide" id="answers">
+          <div class= "row">
+                <section class='answer-alignment'>
+                  <p class="border" id="answer-two"></p>
+                  <button id="answerTwoButton" class="round"></button>
+                </section>
+
+                 <section class='answer-alignment'>
+                  <p class="border" id="answer-one"></p>
+                  <button id="answerOneButton" class="round"></button>
+                </section>
+          </div>
+            
+            <div class='row border'>
+
+              <section class="answer-alignment">
+                  <p class="border" id="answer-four"></p>
+                  <button id="answerFourButton" class="round"></button>
+              </section>
+              
+              <section class="answer-alignment">   
+                  <p class="border" id="answer-three"></p>
+                  <button id="answerThreeButton" class="round"></button>
+               </section>   
+            </div>
+           
+        </div>
+
+        <div id="hint"></div>
+          <p></p>
+        <div id="nav-buttons">
+          <button class="initialHide navigate" id="previous">Previous Question</button>
+          <button class="initialHide navigate" id="next">Next Question</button>  
+        </div>
     </main>
       
   </body>
