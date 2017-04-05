@@ -196,6 +196,12 @@ h2 {
 	font-size: 40px;
 }
 
+input[type=text] {
+	font-size: 15px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
 
 
 
