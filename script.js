@@ -7,6 +7,7 @@ var score = 0
 var index = 0;
 var answerChoice;
 var currentQuestion;
+var timer = null;
 var questions = [
 	{
 		question: "Select the word that correctly completes the sentence",
@@ -142,15 +143,16 @@ function setQuestion() {
 	};
 
 function updateScore() {
+	console.log('updating score')
 	score += currentQuestion.value;
 	$("#score").text(score);
 
 }
 
-function forceProceed() {
-	index = index + 1;
-	setQuestion();
-}
+// function forceProceed() {
+// 	index = index + 1;
+// 	setQuestion();
+// }
 
 //to populate the question
 function showQuestion(){
@@ -171,7 +173,7 @@ function showQuestion(){
 		$("#answer-three").text(currentQuestion.answers.c);
 		$("#answer-four").text(currentQuestion.answers.d);
 		
-		$('p').click(function(){
+		$('p.answer-border').click(function(){
 			answerChoice = $(this).html();
 			checkAnswer();
 
@@ -194,6 +196,7 @@ function checkAnswer() {
 	};
 
 		$("#next").click(function(){
+			clearInterval(timer) 
 			index = index + 1;
 			console.log(index + " next")
 			setQuestion();
