@@ -1,6 +1,5 @@
 .container {
-	border: 1px black solid;
-	margin: 15px;
+	margin: 18px 40px;
 	font-family: 'Pavanam', sans-serif;
 	color: #211D58;
 }
@@ -12,7 +11,6 @@
 
 header {
 	display: flex;
-	border: 1px black solid;
 	flex-direction: row;
 	justify-content: center;
 }
@@ -45,7 +43,7 @@ main {
 	margin-top: 20px;
 	border-radius: 15px;
 	padding: 40px;
-	border: 5px #81A84C solid;
+	border: 1px #81A84C solid;
 
 }
 
@@ -69,7 +67,7 @@ form {
 	width: 240px;
 	border-radius: 50px;
 	background-color: #0C0455;
-	border: 10px #0C0455 solid;
+	border: 1px #0C0455 solid;
 	font-size: 18px;
 	height: 80px;
 	color: white;
@@ -80,7 +78,7 @@ form {
 	display: flex;
 	border-radius: 20px;
 	flex-direction: column;
-	border: 5px #81A84C solid;
+	border: 1px #81A84C solid;
 	font-size: 40px;
 	width: 800px;
 }
@@ -129,14 +127,13 @@ form {
 	display: flex;
 	flex-direction: row;
 	text-align: center;
-	border: 1px black solid;
+	
 }
 
 
 .answer-alignment {
 	display: flex;
 	text-align: center;
-	border: 1px red solid;
 	align-items: center;
 	width: 300px;
 	justify-content: flex-end;
@@ -176,6 +173,27 @@ form {
 	align-items: center;
 	justify-content: center;
 
+}
+
+.warning {
+	color: red;
+}
+
+.answer-border {
+	border: 5px #81A84C solid;
+	padding: 5px;
+	border-radius: 8px;
+	width: 300px;
+	margin: 20px;
+	font-size: 30px;
+}
+
+.correct {
+	background-color: green
+}
+
+h2 {
+	font-size: 40px;
 }
 
 

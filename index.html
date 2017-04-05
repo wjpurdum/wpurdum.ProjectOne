@@ -9,10 +9,9 @@
   </head>
   <body class="container">
     <header>
-      <div class = "border player-info" id="score"></div>
-      <div class = "border player-info" id = "time-text">Time remaining:</div>
-      <div class = "border player-info" id = "timer"></div>
-      <div class = "border player-info" id="name"> Placeholder: Name</div>
+      <div class = "player-info" id="playerScore">Your Score: <span id="score">0</span></div>
+      <div class = "player-info" id = "time-text">Time remaining: <span id="timer"></span></div>
+      <div class = "player-info" id="name"> Player Name</div>
     </header>
     <main>
         
@@ -22,36 +21,33 @@
               Your name <br> إسمك <br><br> <input id="enterName" type="text" name="firstName">
             </form>
           <button id="start">Let's get started! <br>
-           يا الله!
+           ! يا الله
           </button>
         </section>
-        <div class="border initialHide" id="question">
+        <div class="initialHide" id="question">
              <h1 id="question-text"></h1>
+             <h2 id="question-sentence"><h2>
         </div>
          
         <div class="initialHide" id="answers">
           <div class= "row">
                 <section class='answer-alignment'>
-                  <p class="border" id="answer-two"></p>
-                  <button id="answerTwoButton" class="round"></button>
+                  <p class="answer-border" id="answer-two"></p>
                 </section>
 
                  <section class='answer-alignment'>
-                  <p class="border" id="answer-one"></p>
-                  <button id="answerOneButton" class="round"></button>
+                  <p class="answer-border" id="answer-one"></p>
                 </section>
           </div>
             
-            <div class='row border'>
+            <div class='row'>
 
               <section class="answer-alignment">
-                  <p class="border" id="answer-four"></p>
-                  <button id="answerFourButton" class="round"></button>
+                  <p class="answer-border" id="answer-four"></p>
               </section>
               
               <section class="answer-alignment">   
-                  <p class="border" id="answer-three"></p>
-                  <button id="answerThreeButton" class="round"></button>
+                  <p class="answer-border" id="answer-three"></p>
                </section>   
             </div>
            

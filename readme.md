@@ -13,3 +13,6 @@ Silver: Each question will have a 30 second time limit. After time limit hits ze
 
 Gold: Each question will have a 30 second time limit. ALl transitions between questions and screens will have a fade it/fade out function, instead of an abrupt switch. The timer will be fully functional. 
 
+element.text = (seconds);
+seconds --;ajksdfasdf 
+if (seconds ) f
