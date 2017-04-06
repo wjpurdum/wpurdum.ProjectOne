@@ -22,7 +22,7 @@ var questions = [
 		value: 20,
 		correct: false,
 		sorry: "Sorry, that's incorrect.",
-		congratulations: "Great job, let's head to question 2",
+		congratulations: "That's correct! let's head to question two.",
 		weakness: "Plural endings",
 },
 
@@ -39,7 +39,7 @@ var questions = [
 		value: 20,
 		correct: false,
 		sorry: "Sorry, that's incorrect",
-		congratulations: "Correct! Advance to question 3",
+		congratulations: "That's correct! let's head to question three.",
 		weakness: "Prepositions",
 
 }, 
@@ -56,7 +56,7 @@ var questions = [
 		value: 20,
 		correct: false,
 		sorry: "Sorry, that's incorrect",
-		congratulations: "Correct! Advance to question 4",
+		congratulations: "That's correct! let's head to question four.",
 		weakness: "Noun-adjective agreement",
 
 	},
@@ -74,7 +74,7 @@ var questions = [
 		value: 20,
 		correct: false,
 		sorry: "Sorry, that's incorrect",
-		congratulations: "Correct! Advance to question 5",
+		congratulations: "That's correct! let's head to question five.",
 		weakness: "Dual endings and agreement",
 
 	},
@@ -90,9 +90,9 @@ var questions = [
 		rightAnswer: 'هذان',
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect.",
-		congratulations: "Correct!",
-		weakness: "Dual endings and agreement",
+		sorry: "Sorry, that's incorrect. Let's see how you did.",
+		congratulations: "Correct! Let's see how you did",
+		weakness: "Demonstrative pronouns and agreement",
 
 	},
 ]
@@ -156,6 +156,9 @@ function showQuestion(){
 	if (index > 0) {
 		$("#previous").removeClass("initialHide");
 	}
+	if (index == 4) {
+		$("#next").text("Get my Results");
+	}
 	timeRemaining = 30
 	timer = setInterval(timerFunction, 1000);
 
@@ -217,6 +220,7 @@ function endGame() {
 		$("#answers").css("display", "none");
 		if (score < 300 ) {
 			$("#question-sentence").text("Here are some grammar skills you need to work on:");
+			$("#hint").text("");
 			} else {
 			$("#question-sentence").css("display", "none");
 			$("#hint").css("display", "none");
