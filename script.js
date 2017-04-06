@@ -11,7 +11,7 @@ var timer = null;
 var questions = [
 	{
 		question: "Select the word that correctly completes the sentence",
-		sentence: "لم يتحدث ـــــــــ مع الصحافة",
+		sentence: ".لم يتحدث ـــــــــ مع الصحافة",
 		answers: {
 			a: "المترجمين",
 			b: "المترجمون",
@@ -21,14 +21,14 @@ var questions = [
 		rightAnswer: "المترجمون",
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect.",
-		congratulations: "That's correct! let's head to question two.",
+		sorry: "Sorry, that's incorrect. You can try again until time is up.",
+		congratulations: "That's correct! Let's head to question two.",
 		weakness: "Plural endings",
 },
 
 	{
 		question: "Choose the correct word to fill in the sentence",
-		sentence: "والدي يذهب ـــــــ مكتبه كل يوم.",
+		sentence: ".والدي يذهب ـــــــ مكتبه كل يوم",
 		answers: {
 			a: "إلى",
 			b: "علي",
@@ -38,14 +38,14 @@ var questions = [
 		rightAnswer: 'إلى',
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect",
-		congratulations: "That's correct! let's head to question three.",
+		sorry: "Sorry, that's incorrect. You can try again until time is up.",
+		congratulations: "That's correct! Let's head to question three.",
 		weakness: "Prepositions",
 
 }, 
 	{
 		question: "Choose the correct adjective to complete the sentence",
-		sentence: "حضرت المؤتمر مع سبعة رجال ــــــ.",
+		sentence: ".حضرت المؤتمر مع سبعة محامين ــــــ",
 		answers: {
 			a: "المصريون",
 			b: "مصريون",
@@ -55,15 +55,15 @@ var questions = [
 		rightAnswer: 'مصريين',
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect",
-		congratulations: "That's correct! let's head to question four.",
+		sorry: "Sorry, that's incorrect. You can try again until time is up.",
+		congratulations: "That's correct! Let's head to question four.",
 		weakness: "Noun-adjective agreement",
 
 	},
 	{
 
 		question: "Choose the correct adjective to complete the sentence",
-		sentence: "دخل اخوان ــــــــ البيت.",
+		sentence: ".دخل اخوان ــــــــ البيت",
 		answers: {
 			a: "طويلين",
 			b: "الطويلان",
@@ -73,14 +73,14 @@ var questions = [
 		rightAnswer: 'طويلان',
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect",
-		congratulations: "That's correct! let's head to question five.",
+		sorry: "Sorry, that's incorrect. You can try again until time is up.",
+		congratulations: "That's correct! Let's head to question five.",
 		weakness: "Dual endings and agreement",
 
 	},
 	{
-		question: "Choose the correct pronoun to complete the sentence",
-		sentence: ".البابان مغلقان _______",
+		question: "Choose the correct demonstrative pronoun to complete the sentence",
+		sentence: ".ــــــــ البابان مغلقان ",
 		answers: {
 			a: "هذا",
 			b: "هذه",
@@ -90,8 +90,8 @@ var questions = [
 		rightAnswer: 'هذان',
 		value: 20,
 		correct: false,
-		sorry: "Sorry, that's incorrect. Let's see how you did.",
-		congratulations: "Correct! Let's see how you did",
+		sorry: "Sorry, that's incorrect. You can try again until time us up, or click 'My Results' to see how you did.",
+		congratulations: "Correct! Click 'My Results' to see how you did.",
 		weakness: "Demonstrative pronouns and agreement",
 
 	},
@@ -153,14 +153,15 @@ function updateScore() {
 
 //to populate the question
 function showQuestion(){
+	timeRemaining = 30
+	timer = setInterval(timerFunction, 1000);
 	if (index > 0) {
 		$("#previous").removeClass("initialHide");
 	}
 	if (index == 4) {
 		$("#next").text("Get my Results");
 	}
-	timeRemaining = 30
-	timer = setInterval(timerFunction, 1000);
+	
 
 	$("#timer").text(timeRemaining);
 		$("#hint").text("");
@@ -207,6 +208,8 @@ function checkAnswer() {
 		});
 
 function endGame() {
+		clearInterval(timer);
+		$("#time-text").text("Game Over");
 		console.log(score);
 		console.log(questions[0].correct)
 		console.log(questions[1].correct)

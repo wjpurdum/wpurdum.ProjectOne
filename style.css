@@ -1,5 +1,5 @@
 .container {
-	margin: 18px 40px;
+	margin: 30px 40px;
 	font-family: 'Pavanam', sans-serif;
 	color: #211D58;
 }
@@ -15,9 +15,7 @@ header {
 	justify-content: center;
 }
 
-#time-text {
-	margin-left: 100px;
-}
+
 
 .player-info {
 	padding: 10px 20px;
