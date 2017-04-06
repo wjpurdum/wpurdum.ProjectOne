@@ -13,6 +13,27 @@ Silver: Each question will have a 30 second time limit. After time limit hits ze
 
 Gold: Each question will have a 30 second time limit. ALl transitions between questions and screens will have a fade it/fade out function, instead of an abrupt switch. The timer will be fully functional. 
 
-element.text = (seconds);
-seconds --;ajksdfasdf 
-if (seconds ) f
+Explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+
+Technologies Used:
+
+1. HTML
+2. CSS
+3. JavaScript
+	- JQuery
+	- Timer
+
+Approach taken:
+
+1. Created 5 unique questions as objects in an array, stored as a global variable
+2. Created a function that would store user name 
+3. Created a timer functiont that would give the user 30 seconds to answer each question. After this time elapses, the game automatically advances to the next question. 
+4. Created 3 seperate functions to:
+	a. Set the question (using the index of the questions array set as a global variable)
+	b. Register the user answer selection and compare it to the correct answer in the question's object. 
+	c. Update the user's score based on correct/incorrect answers/
+	d. Provide user their final score as well as specific grammar concepts to focus on based on their incorrect answers. 
+
+Unsolved problems
+- The score gets updated by multiples of what index the question loop is on. I can't seem to figure this out. As such, the score is inaccurate. 
+- The timer function does not work correctly when the user goes back to a previous questions. 
