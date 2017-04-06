@@ -103,7 +103,6 @@ $("#start").click(startGame);
 
 //to start the game on submission of player name
 function startGame() {
-	console.log('button has been clicked');
 	var userName = $("#enterName").val();
 	$("#name").text(userName);
 	$("#startScreen").addClass('hide');
@@ -120,7 +119,6 @@ function timerFunction() {
 	$("#timer").text(timeRemaining);
 	if(timeRemaining > 0) {
 	timeRemaining-=1;
-	console.log(timeRemaining)
 	} else {
 		clearInterval(timer)
 		index = index + 1;
@@ -132,9 +130,8 @@ function timerFunction() {
 
 //to determine which question is being populated into the game
 function setQuestion() {
-	console.log("function setQuestion Running");
 	currentQuestion = questions[index];
-	if (index <= 5) {
+	if (index < 5) {
 		showQuestion() }
 	else {
 		endGame();
@@ -156,7 +153,6 @@ function updateScore() {
 
 //to populate the question
 function showQuestion(){
-	console.log(index);
 	if (index > 0) {
 		$("#previous").removeClass("initialHide");
 	}
@@ -198,7 +194,6 @@ function checkAnswer() {
 		$("#next").click(function(){
 			clearInterval(timer) 
 			index = index + 1;
-			console.log(index + " next")
 			setQuestion();
 		});
 		
@@ -209,35 +204,49 @@ function checkAnswer() {
 		});
 
 function endGame() {
+		console.log(score);
+		console.log(questions[0].correct)
+		console.log(questions[1].correct)
+		console.log(questions[2].correct)
+		console.log(questions[3].correct)
+		console.log(questions[4].correct)
 		
 		$("#next").addClass('initialHide')
 		$("#previous").addClass('initialHide')
-		$("#question-text").text("Great job, you completed the quiz! You scored " + score + "/100.");
-		$("#question-sentence").text("Here are some grammar skills you need to work on:");
+		$("#question-text").text("Great job, you completed the quiz! You scored " + score + " points.");
 		$("#answers").css("display", "none");
+		if (score < 300 ) {
+			$("#question-sentence").text("Here are some grammar skills you need to work on:");
+			} else {
+			$("#question-sentence").css("display", "none");
+			$("#hint").css("display", "none");
+				};
+			
 			if(questions[0].correct === false) {
-					$("#hint").text(questions[0].weakness);
+					$("#hint").append("<p>" + questions[0].weakness + "</p>");
 			};
 
 			if(questions[1].correct === false) {
-					$("#hint").text(questions[1].weakness);
+					$("#hint").append("<p>" + questions[1].weakness + "</p>");
 			};
 
 			if(questions[2].correct === false) {
-					$("#hint").text(questions[2].weakness);
+					$("#hint").append("<p>" + questions[2].weakness + "</p>");
 			};
 
-
 			if(questions[3].correct === false) {
-					$("#hint").text(questions[3].weakness);
+					$("#hint").append("<p>" + questions[3].weakness + "</p>");
 			};
 
 			if(questions[4].correct === false) {
-					$("#hint").text(questions[4].weakness);
-			};
+					$("#hint").append("<p>" + questions[4].weakness + "</p>");
+			}
 		};		
 
-	
+
+
+
+
 
 
 });
@@ -245,8 +254,6 @@ function endGame() {
 
 
 
-//to advance question 
-//interval until function happens?
 
 
 
