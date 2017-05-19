@@ -1,4 +1,6 @@
 
+// see where intervals are being set and every time you call set interval - grab existing timer ID and clear it before you call a new on
+
 $(document).ready(function(){
 
 
@@ -42,7 +44,7 @@ var questions = [
 		congratulations: "That's correct! Let's head to question three.",
 		weakness: "Prepositions",
 
-}, 
+},
 	{
 		question: "Choose the correct adjective to complete the sentence",
 		sentence: ".حضرت المؤتمر مع سبعة محامين ــــــ",
@@ -99,6 +101,11 @@ var questions = [
 
 $("#start").click(startGame);
 
+$('p.answer-border').click(function(){
+	answerChoice = $(this).html();
+	checkAnswer();
+
+})
 
 
 //to start the game on submission of player name
@@ -112,7 +119,7 @@ function startGame() {
 		$("#hint").removeClass('initialHide');
 		$("#hint").text("Please enter your username!")
 	}
-	
+
 };
 
 function timerFunction() {
@@ -154,6 +161,8 @@ function updateScore() {
 //to populate the question
 function showQuestion(){
 	timeRemaining = 30
+	// take this out if this doenst work
+	clearInterval(timer)
 	timer = setInterval(timerFunction, 1000);
 	if (index > 0) {
 		$("#previous").removeClass("initialHide");
@@ -161,7 +170,7 @@ function showQuestion(){
 	if (index == 4) {
 		$("#next").text("Get my Results");
 	}
-	
+
 
 	$("#timer").text(timeRemaining);
 		$("#hint").text("");
@@ -172,12 +181,8 @@ function showQuestion(){
 		$("#answer-two").text(currentQuestion.answers.b);
 		$("#answer-three").text(currentQuestion.answers.c);
 		$("#answer-four").text(currentQuestion.answers.d);
-		
-		$('p.answer-border').click(function(){
-			answerChoice = $(this).html();
-			checkAnswer();
 
-		})
+
 
 };
 //to check player answers
@@ -192,20 +197,22 @@ function checkAnswer() {
 			console.log('incorrect');
 			$("#hint").text(currentQuestion.sorry);
 		};
-		
+
 	};
 
 		$("#next").click(function(){
-			clearInterval(timer) 
+			clearInterval(timer)
 			index = index + 1;
 			setQuestion();
 		});
-		
+
 
 		$("#previous").click(function(){
 			index = index - 1;
 			setQuestion();
+			// clearInterval(timer);
 		});
+	
 
 function endGame() {
 		clearInterval(timer);
@@ -216,7 +223,7 @@ function endGame() {
 		console.log(questions[2].correct)
 		console.log(questions[3].correct)
 		console.log(questions[4].correct)
-		
+
 		$("#next").addClass('initialHide')
 		$("#previous").addClass('initialHide')
 		$("#question-text").text("Great job, you completed the quiz! You scored " + score + " points.");
@@ -228,7 +235,7 @@ function endGame() {
 			$("#question-sentence").css("display", "none");
 			$("#hint").css("display", "none");
 				};
-			
+
 			if(questions[0].correct === false) {
 					$("#hint").append("<p>" + questions[0].weakness + "</p>");
 			};
@@ -248,7 +255,7 @@ function endGame() {
 			if(questions[4].correct === false) {
 					$("#hint").append("<p>" + questions[4].weakness + "</p>");
 			}
-		};		
+		};
 
 
 
@@ -257,50 +264,3 @@ function endGame() {
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
