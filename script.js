@@ -1,9 +1,6 @@
 
-// see where intervals are being set and every time you call set interval - grab existing timer ID and clear it before you call a new on
-
 $(document).ready(function(){
-
-
+// Global variables
 var timeRemaining = 30
 var score = 0
 var index = 0;
@@ -104,7 +101,6 @@ $("#start").click(startGame);
 $('p.answer-border').click(function(){
 	answerChoice = $(this).html();
 	checkAnswer();
-
 })
 
 
@@ -122,6 +118,7 @@ function startGame() {
 
 };
 
+// timer function
 function timerFunction() {
 	$("#timer").text(timeRemaining);
 	if(timeRemaining > 0) {
@@ -145,18 +142,12 @@ function setQuestion() {
 	}
 
 	};
-
+// update score
 function updateScore() {
-	console.log('updating score')
 	score += currentQuestion.value;
 	$("#score").text(score);
 
 }
-
-// function forceProceed() {
-// 	index = index + 1;
-// 	setQuestion();
-// }
 
 //to populate the question
 function showQuestion(){
@@ -182,8 +173,6 @@ function showQuestion(){
 		$("#answer-three").text(currentQuestion.answers.c);
 		$("#answer-four").text(currentQuestion.answers.d);
 
-
-
 };
 //to check player answers
 function checkAnswer() {
@@ -194,12 +183,11 @@ function checkAnswer() {
 			currentQuestion.correct = true;
 			updateScore();
 		} else {
-			console.log('incorrect');
 			$("#hint").text(currentQuestion.sorry);
 		};
 
 	};
-
+		// Listener events for next and previous buttons
 		$("#next").click(function(){
 			clearInterval(timer)
 			index = index + 1;
@@ -212,17 +200,11 @@ function checkAnswer() {
 			setQuestion();
 			// clearInterval(timer);
 		});
-	
+
 
 function endGame() {
 		clearInterval(timer);
 		$("#time-text").text("Game Over");
-		console.log(score);
-		console.log(questions[0].correct)
-		console.log(questions[1].correct)
-		console.log(questions[2].correct)
-		console.log(questions[3].correct)
-		console.log(questions[4].correct)
 
 		$("#next").addClass('initialHide')
 		$("#previous").addClass('initialHide')
@@ -256,11 +238,5 @@ function endGame() {
 					$("#hint").append("<p>" + questions[4].weakness + "</p>");
 			}
 		};
-
-
-
-
-
-
 
 });
