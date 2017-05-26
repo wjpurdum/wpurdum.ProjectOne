@@ -1,7 +1,5 @@
 
 $(document).ready(function(){
-
-
 var timeRemaining = 30
 var score = 0
 var index = 0;
@@ -42,7 +40,7 @@ var questions = [
 		congratulations: "That's correct! Let's head to question three.",
 		weakness: "Prepositions",
 
-}, 
+},
 	{
 		question: "Choose the correct adjective to complete the sentence",
 		sentence: ".حضرت المؤتمر مع سبعة محامين ــــــ",
@@ -112,7 +110,7 @@ function startGame() {
 		$("#hint").removeClass('initialHide');
 		$("#hint").text("Please enter your username!")
 	}
-	
+
 };
 
 function timerFunction() {
@@ -135,21 +133,14 @@ function setQuestion() {
 		showQuestion() }
 	else {
 		endGame();
-	}
-
+		}
 	};
 
 function updateScore() {
 	console.log('updating score')
 	score += currentQuestion.value;
 	$("#score").text(score);
-
 }
-
-// function forceProceed() {
-// 	index = index + 1;
-// 	setQuestion();
-// }
 
 //to populate the question
 function showQuestion(){
@@ -161,7 +152,7 @@ function showQuestion(){
 	if (index == 4) {
 		$("#next").text("Get my Results");
 	}
-	
+
 
 	$("#timer").text(timeRemaining);
 		$("#hint").text("");
@@ -172,19 +163,15 @@ function showQuestion(){
 		$("#answer-two").text(currentQuestion.answers.b);
 		$("#answer-three").text(currentQuestion.answers.c);
 		$("#answer-four").text(currentQuestion.answers.d);
-		
+
 		$('p.answer-border').click(function(){
 			answerChoice = $(this).html();
 			checkAnswer();
-
 		})
-
 };
 //to check player answers
 function checkAnswer() {
 		if (answerChoice == currentQuestion.rightAnswer) {
-			//score = score + currentQuestion.value;
-			//$("#score").text(score);
 			$("#hint").text(currentQuestion.congratulations);
 			currentQuestion.correct = true;
 			updateScore();
@@ -192,15 +179,14 @@ function checkAnswer() {
 			console.log('incorrect');
 			$("#hint").text(currentQuestion.sorry);
 		};
-		
 	};
-
+		// Next and previous listening events
 		$("#next").click(function(){
-			clearInterval(timer) 
+			clearInterval(timer)
 			index = index + 1;
 			setQuestion();
 		});
-		
+
 
 		$("#previous").click(function(){
 			index = index - 1;
@@ -216,7 +202,7 @@ function endGame() {
 		console.log(questions[2].correct)
 		console.log(questions[3].correct)
 		console.log(questions[4].correct)
-		
+
 		$("#next").addClass('initialHide')
 		$("#previous").addClass('initialHide')
 		$("#question-text").text("Great job, you completed the quiz! You scored " + score + " points.");
@@ -228,7 +214,7 @@ function endGame() {
 			$("#question-sentence").css("display", "none");
 			$("#hint").css("display", "none");
 				};
-			
+
 			if(questions[0].correct === false) {
 					$("#hint").append("<p>" + questions[0].weakness + "</p>");
 			};
@@ -248,59 +234,12 @@ function endGame() {
 			if(questions[4].correct === false) {
 					$("#hint").append("<p>" + questions[4].weakness + "</p>");
 			}
-		};		
+		};
 
 
 
 
 
 
-
+// closing
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
