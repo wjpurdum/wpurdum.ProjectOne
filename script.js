@@ -112,7 +112,7 @@ function startGame() {
 	}
 
 };
-
+// Set the tumer and interval
 function timerFunction() {
 	$("#timer").text(timeRemaining);
 	if(timeRemaining > 0) {
@@ -126,7 +126,7 @@ function timerFunction() {
 
 
 
-//to determine which question is being populated into the game
+//to determine which question is being populated into the game. Index refers to questions in variable above. Index determined at CheckAnswer function
 function setQuestion() {
 	currentQuestion = questions[index];
 	if (index < 5) {
@@ -137,7 +137,6 @@ function setQuestion() {
 	};
 
 function updateScore() {
-	console.log('updating score')
 	score += currentQuestion.value;
 	$("#score").text(score);
 }
@@ -153,7 +152,7 @@ function showQuestion(){
 		$("#next").text("Get my Results");
 	}
 
-
+// Set the timer and the text for the questions
 	$("#timer").text(timeRemaining);
 		$("#hint").text("");
 		$("#question,#answers,#next").removeClass('initialHide');
